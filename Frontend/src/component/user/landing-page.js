@@ -16,7 +16,7 @@ export default function LandingPage() {
             "name": "name",
             "email": email
         }
-        axios.post(`http://3.108.254.239:3000/user/login`, payload, {headers})
+        axios.post(`https://3.108.254.239:3000/user/login`, payload, {headers})
         .then((response) => {
             if(response.status==200){
                 sessionStorage.setItem('access-token', response.data.token);
