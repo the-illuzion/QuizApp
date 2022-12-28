@@ -43,14 +43,13 @@ export default function Game() {
     }
 
     const checkGameCondition = () => {
-        if (difficultyLevel < 0 || difficultyLevel > 10 || quesNum > 10) {
+        if (difficultyLevel <= 0 || difficultyLevel > 10 || quesNum > 10) {
             if (!isScoreSave) {
                 let headers = {
                     "Content-Type": 'application/json;charset=utf-8',
                     "Access-Control-Allow-Origin": "*",
                     "jwt": sessionStorage.getItem('access-token')
                 }
-                console.log(headers)
                 let payload = {
                     "score": score,
                     "quizId": sessionStorage.getItem('quizId'),
