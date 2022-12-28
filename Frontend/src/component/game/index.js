@@ -44,14 +44,14 @@ export default function Game() {
 
     const checkGameCondition = () => {
         if (difficultyLevel > 0 && difficultyLevel <= 10) {
-            if (quesNum <= 10)
+            if (quesNum < 10)
                 return true;
         } else {
             if (!isScoreSave) {
                 let header = {
                     "Content-Type": 'application/json;charset=utf-8',
                     "Access-Control-Allow-Origin": "*",
-                    "jwt": sessionStorage.getItem('access-token')
+                    //"jwt": sessionStorage.getItem('access-token')
                 }
                 let payload = {
                     "score": score,
@@ -60,8 +60,6 @@ export default function Game() {
                 }
                 axios.post(`https://3.108.254.239:3000/user/postScore`, payload, { header })
                     .then((response) => {
-                        console.log(payload.score)
-                        console.log(response)
                     })
                 setIsScoreSave(true)
             }
