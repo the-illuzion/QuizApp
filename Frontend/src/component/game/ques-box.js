@@ -6,7 +6,7 @@ export default function QuesBox(props) {
     const [option, setOption] = useState([])
     const [answer, setAnswer] = useState([])
     const [userOption, setUserOption] = useState("")
-    
+    console.log("comonent loaded");
     useEffect(() => {
         let headers = {
             'Content-Type': 'application/json;charset=utf-8',
