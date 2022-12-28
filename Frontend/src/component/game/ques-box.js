@@ -8,6 +8,7 @@ export default function QuesBox(props) {
     const [userOption, setUserOption] = useState("")
     console.log("comonent loaded");
     useEffect(() => {
+        console.log("in useffect");
         let headers = {
             'Content-Type': 'application/json;charset=utf-8',
             "Access-Control-Allow-Origin": "*",
