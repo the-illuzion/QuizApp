@@ -7,19 +7,22 @@ export default function QuesBox(props) {
     const [answer, setAnswer] = useState([])
     const [userOption, setUserOption] = useState("")
 
+
+    useEffect(() => {
         let headers = {
             'Content-Type': 'application/json;charset=utf-8',
             "Access-Control-Allow-Origin": "*",
             "jwt": sessionStorage.getItem('access-token')
         }
         let payload = {}
-        axios.get(`https://3.108.254.239:3000/getQuestion?level=${props.level}`, { headers })
+        axios.get(`http://3.108.254.239:3000/getQuestion?level=${props.level}`, { headers })
             .then((response) => {
                 setQuestion(response.data.data[0].question)
                 setAnswer(response.data.data[0].answer)
                 setOption(response.data.data[0].option)
             })
-
+    }, [props.level])
+    
     const handleChange = (e) => {
         console.log(e.target.value)
         setUserOption(e.target.value)
