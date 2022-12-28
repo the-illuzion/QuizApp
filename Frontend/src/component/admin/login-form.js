@@ -18,7 +18,7 @@ export default function LoginForm() {
             email: email,
             password: password
         }
-        axios.post(`http://3.108.254.239:3000/admin/login`, payload, { header })
+        axios.post(`https://3.108.254.239:3000/admin/login`, payload, { header })
             .then((response) => {
                 if (response &&
                     response.status == 200) {
