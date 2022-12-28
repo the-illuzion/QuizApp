@@ -14,7 +14,7 @@ export default function QuesBox(props) {
             "jwt": sessionStorage.getItem('access-token')
         }
         let payload = {}
-        axios.get(`http://localhost:3001/getQuestion?level=${props.level}`, { headers })
+        axios.get(`http://3.108.254.239:3000/getQuestion?level=${props.level}`, { headers })
             .then((response) => {
                 setQuestion(response.data.data[0].question)
                 setAnswer(response.data.data[0].answer)
