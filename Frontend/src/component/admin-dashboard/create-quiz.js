@@ -21,7 +21,7 @@ export default function CreateQuiz(props) {
             "title": title,
             "subject": subject,
         }
-        axios.post(`http://3.108.254.239:3000/quiz`, payload, {headers})
+        axios.post(`https://3.108.254.239:3000/quiz`, payload, {headers})
         .then((response) => {
             console.log(response)
             let quizId = response.data.quizId;
