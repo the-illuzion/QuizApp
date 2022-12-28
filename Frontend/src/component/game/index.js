@@ -80,7 +80,7 @@ export default function Game() {
             <div>
                 {checkGameCondition() ?
                     <QuesBox
-                        level={5}
+                        level={difficultyLevel}
                         markCorrectAns={markCorrectAns}
                         markIncorrectAns={markIncorrectAns}
                     /> : <div>
