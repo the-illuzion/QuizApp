@@ -11,7 +11,7 @@ export default function QuizTable() {
             "jwt": sessionStorage.getItem('access-token')
         };
         console.log(headers)
-        axios.get(`http://3.108.254.239:3000//quiz/getQuizByAdminId`, { headers })
+        axios.get(`http://3.108.254.239:3000/quiz/getQuizByAdminId`, { headers })
             .then((response) => {
                 console.log(response.data.data);
                 setQuizData(response.data.data);
