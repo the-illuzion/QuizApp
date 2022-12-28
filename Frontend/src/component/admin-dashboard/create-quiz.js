@@ -21,12 +21,12 @@ export default function CreateQuiz(props) {
             "title": title,
             "subject": subject,
         }
-        axios.post(`http://localhost:3001/quiz`, payload, {headers})
+        axios.post(`http://3.108.254.239:3000/quiz`, payload, {headers})
         .then((response) => {
             console.log(response)
             let quizId = response.data.quizId;
             if(response.status==200) {
-            let link = `http://localhost:3000/user?quizId=${quizId}`;
+            let link = `https://quizapp-dhl.pages.dev/user?quizId=${quizId}`;
             console.log('beforeshowlink')
             props.showLink(link);
             props.closeQuiz();
