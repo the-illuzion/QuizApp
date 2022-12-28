@@ -43,28 +43,27 @@ export default function Game() {
     }
 
     const checkGameCondition = () => {
-        if (difficultyLevel > 0 && difficultyLevel <= 10) {
-            if (quesNum < 10)
-                return true;
-        } else {
+        if (difficultyLevel < 0 || difficultyLevel > 10 || quesNum > 10) {
             if (!isScoreSave) {
-                let header = {
+                let headers = {
                     "Content-Type": 'application/json;charset=utf-8',
                     "Access-Control-Allow-Origin": "*",
                     "jwt": sessionStorage.getItem('access-token')
                 }
+                console.log(headers)
                 let payload = {
                     "score": score,
                     "quizId": sessionStorage.getItem('quizId'),
                     "quesAttempted": quesNum
                 }
-                axios.post(`https://3.108.254.239:3000/user/postScore`, payload, { header })
+                axios.post(`https://3.108.254.239:3000/user/postScore`, payload, { headers })
                     .then((response) => {
                     })
                 setIsScoreSave(true)
             }
             return false;
-        }
+        } 
+        return true;
 
     }
     return (
