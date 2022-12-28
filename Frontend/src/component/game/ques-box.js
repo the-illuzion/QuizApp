@@ -6,9 +6,7 @@ export default function QuesBox(props) {
     const [option, setOption] = useState([])
     const [answer, setAnswer] = useState([])
     const [userOption, setUserOption] = useState("")
-    console.log("comonent loaded");
-    useEffect(() => {
-        console.log("in useffect");
+
         let headers = {
             'Content-Type': 'application/json;charset=utf-8',
             "Access-Control-Allow-Origin": "*",
@@ -21,7 +19,6 @@ export default function QuesBox(props) {
                 setAnswer(response.data.data[0].answer)
                 setOption(response.data.data[0].option)
             })
-    }, [])
 
     const handleChange = (e) => {
         console.log(e.target.value)
