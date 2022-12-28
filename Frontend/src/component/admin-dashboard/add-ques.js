@@ -26,7 +26,7 @@ export default function AddQes(props) {
             "subject": subject,
             "adminId": "adminId"
         }
-        axios.post(`http://localhost:3001/question`, payload, { headers })
+        axios.post(`http://3.108.254.239:3000/question`, payload, { headers })
             .then((response) => {
                 console.log(response)
             })
