@@ -51,11 +51,11 @@ export default function Game() {
                 let header = {
                     "Content-Type": 'application/json;charset=utf-8',
                     "Access-Control-Allow-Origin": "*",
-                    //"jwt": sessionStorage.getItem('access-token')
+                    "jwt": sessionStorage.getItem('access-token')
                 }
                 let payload = {
                     "score": score,
-                    "quizId": sessionStorage.getItem(),
+                    "quizId": sessionStorage.getItem('quizId'),
                     "quesAttempted": quesNum
                 }
                 axios.post(`https://3.108.254.239:3000/user/postScore`, payload, { header })
