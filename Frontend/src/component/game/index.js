@@ -58,7 +58,7 @@ export default function Game() {
                     "quizId": sessionStorage.getItem(),
                     "quesAttempted": quesNum
                 }
-                axios.post(`http://localhost:3001/user/postScore`, payload, { header })
+                axios.post(`https://3.108.254.239:3000/user/postScore`, payload, { header })
                     .then((response) => {
                         console.log(payload.score)
                         console.log(response)
